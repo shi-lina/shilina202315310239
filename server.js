@@ -1,20 +1,18 @@
-// 引入 Express 框架
+
 const express = require('express');
 const app = express(); // 创建一个 Express 应用
 const port = 3000; // 定义服务器端口号
 
-// 示例用户数据，存储在内存中（实际开发中建议用数据库）
 let users = [
   { id: 1, name: 'Alice', age: 25 },
   { id: 2, name: 'Bob', age: 30 },
 ];
 
-// 中间件：解析 JSON 格式的请求体
+
 app.use(express.json());
 
 // 定义接口
 
-// 获取所有用户
 app.get('/api/users', (req, res) => {
   res.json(users); // 返回用户列表
 });
@@ -40,5 +38,5 @@ app.post('/api/users', (req, res) => {
 
 // 启动服务器
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`running on http://localhost:${port}`);
 });
